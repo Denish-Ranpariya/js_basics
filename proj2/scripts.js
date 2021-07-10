@@ -1,26 +1,46 @@
-function changeBackground(color) {
-    var circle = document.getElementById('circle');
-    switch (color) {
-        case 'red':
-            circle.style.background = '#e44236';
-            break;
+const red = document.querySelector(".red");
+const cyan = document.querySelector(".cyan");
+const violet = document.querySelector(".violet");
+const orange = document.querySelector(".orange");
+const pink = document.querySelector(".pink");
 
-        case 'cyan':
-            circle.style.background = '#25ccf7';
-            break;
 
-        case 'violet':
-            circle.style.background = '#8b78e6';
-            break;
+const center = document.querySelector(".center");
 
-        case 'orange':
-            circle.style.background = '#ea7773';
-            break;
-
-        case 'pink':
-            circle.style.background = '#bb2cd9';
-            break;
-        default:
-            break;
-    }
+var getBgColor = (selectedElement) => {
+    return window.getComputedStyle(selectedElement).backgroundColor;
 }
+
+// red.addEventListener('mouseenter', e => {
+//     center.style.background = getBgColor(red);
+// });
+
+// cyan.addEventListener('mouseenter', e => {
+//     center.style.background = getBgColor(cyan);
+// });
+
+// violet.addEventListener('mouseenter', e => {
+//     center.style.background = getBgColor(violet);
+// });
+
+// orange.addEventListener('mouseenter', e => {
+//     center.style.background = getBgColor(orange);
+// });
+
+// pink.addEventListener('mouseenter', e => {
+//     center.style.background = getBgColor(pink);
+// });
+
+
+
+var changeBG = (selectedElement) => {
+    selectedElement.addEventListener('mouseenter', e => {
+        center.style.background = getBgColor(selectedElement);
+    });
+};
+
+changeBG(red);
+changeBG(cyan);
+changeBG(violet);
+changeBG(orange);
+changeBG(pink);
