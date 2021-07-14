@@ -8,10 +8,24 @@ var User = function(firstName, courseCount) {
     }
 }
 
+//prototype is used to add new methods or properties without touching actual prototype
+User.prototype.getFirstName = function() {
+    console.log(`Your firstname is: ${this.firstName}`);
+}
+
 var denish = new User('denish', 4); //since we are using new keyword here this function call is not regular function call so won't refer to global context
 
-console.log(denish);
+//and new kwyword will be responsible for creating new instance of the prototype
+
+// console.log(denish);
+
+console.log(denish.getCourseCount());
+denish.getFirstName();
 
 var hitesh = new User('hitesh', 2);
 
-console.log(hitesh);
+// console.log(hitesh);
+console.log(hitesh.getCourseCount());
+hitesh.getFirstName();
+
+
